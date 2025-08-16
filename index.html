@@ -7,54 +7,94 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+  <!-- Header -->
   <header class="header">
-    <h1>✨ Dynamic Resume Builder</h1>
+    <h1>✨ Resume Builder Online</h1>
   </header>
 
+  <!-- Form Container -->
   <div class="form-wrapper">
     <form id="resume-form">
+      <!-- Personal Info -->
       <input type="text" id="name" placeholder="Full Name" required />
       <input type="email" id="email" placeholder="Email" required />
       <input type="tel" id="phone" placeholder="Phone Number" required />
       <input type="text" id="linkedin" placeholder="LinkedIn Profile" />
       <input type="text" id="github" placeholder="GitHub Profile" />
 
+      <!-- Career Info -->
       <textarea id="summary" placeholder="Career Objective"></textarea>
       <textarea id="education" placeholder="Education (Year, Institute, CGPA)"></textarea>
       <textarea id="projects" placeholder="Projects (Title, Tech Used, Summary)"></textarea>
       <textarea id="experience" placeholder="Experience (Role, Company, Duration, Summary)"></textarea>
       <textarea id="skills" placeholder="Skills (comma-separated)"></textarea>
 
+      <!-- File Uploads -->
       <label for="photo">Upload Profile Photo:</label>
       <input type="file" id="photo" accept="image/*" />
 
       <label for="certificates">Upload Certificates (PDF or Image):</label>
       <input type="file" id="certificates" multiple accept="image/*,application/pdf" />
 
-      <label for="template">Choose a Template:</label>
-      <select id="template">
-        <option value="sagegreen">Sage Green</option>
-        <option value="lightblue">Light Blue</option>
-        <option value="yellow">Yellow</option>
-        <option value="modern">Modern</option>
-        <option value="dark">Dark</option>
-        <option value="gradient">Gradient</option>
-        <option value="classic">Classic</option>
-        <option value="minimalist">Minimalist</option>
-        <option value="professional">Professional</option>
-        <option value="elegant">Elegant</option>
-        <option value="creative">Creative</option>
-        <option value="corporate">Corporate</option>
-        <option value="vibrant">Vibrant</option>
-        <option value="pastel">Pastel</option>
-        <option value="monochrome">Monochrome</option>
-        <option value="neon">Neon</option>
-        <option value="aqua">Aqua</option>
-        <option value="midnight">Midnight</option>
-        <option value="coolgrey">Cool Grey</option>
-        <option value="warmbeige">Warm Beige</option>
-      </select>
+      <!-- Template Selection -->
+      <h2>Choose a Template</h2>
+      <div id="templateGrid" class="template-grid">
+        <div class="template-card" data-template="sagegreen"><div class="template-preview theme-sagegreen"></div><span>Sage Green</span></div>
+        <div class="template-card" data-template="lightblue"><div class="template-preview theme-lightblue"></div><span>Light Blue</span></div>
+        <div class="template-card" data-template="yellow"><div class="template-preview theme-yellow"></div><span>Yellow</span></div>
+        <div class="template-card" data-template="modern"><div class="template-preview theme-modern"></div><span>Modern</span></div>
+        <div class="template-card" data-template="dark"><div class="template-preview theme-dark"></div><span>Dark</span></div>
+        <div class="template-card" data-template="gradient"><div class="template-preview theme-gradient"></div><span>Gradient</span></div>
+        <div class="template-card" data-template="minimalist"><div class="template-preview theme-minimalist"></div><span>Minimalist</span></div>
+        <div class="template-card" data-template="professional"><div class="template-preview theme-professional"></div><span>Professional</span></div>
+        <div class="template-card" data-template="elegant"><div class="template-preview theme-elegant"></div><span>Elegant</span></div>
+        <div class="template-card" data-template="creative"><div class="template-preview theme-creative"></div><span>Creative</span></div>
+        <div class="template-card" data-template="corporate"><div class="template-preview theme-corporate"></div><span>Corporate</span></div>
+        <div class="template-card" data-template="vibrant"><div class="template-preview theme-vibrant"></div><span>Vibrant</span></div>
+        <div class="template-card" data-template="pastel"><div class="template-preview theme-pastel"></div><span>Pastel</span></div>
+        <div class="template-card" data-template="monochrome"><div class="template-preview theme-monochrome"></div><span>Monochrome</span></div>
+        <div class="template-card" data-template="neon"><div class="template-preview theme-neon"></div><span>Neon</span></div>
+        <div class="template-card" data-template="aqua"><div class="template-preview theme-aqua"></div><span>Aqua</span></div>
+        <div class="template-card" data-template="midnight"><div class="template-preview theme-midnight"></div><span>Midnight</span></div>
+        <div class="template-card" data-template="coolgrey"><div class="template-preview theme-coolgrey"></div><span>Cool Grey</span></div>
+        <div class="template-card" data-template="warmbeige"><div class="template-preview theme-warmbeige"></div><span>Warm Beige</span></div>
+        <div class="template-card" data-template="classic"><div class="template-preview theme-classic"></div><span>Classic</span></div>
+        <div class="template-card" data-template="blue"><div class="template-preview theme-blue"></div><span>Blue</span></div>
+        <div class="template-card" data-template="grey"><div class="template-preview theme-grey"></div><span>Grey</span></div>
+        <div class="template-card" data-template="sunset"><div class="template-preview theme-sunset"></div><span>Sunset</span></div>
+        <div class="template-card" data-template="ocean"><div class="template-preview theme-ocean"></div><span>Ocean</span></div>
+        <div class="template-card" data-template="green"><div class="template-preview theme-green"></div><span>Green</span></div>
+        <div class="template-card" data-template="lavender"><div class="template-preview theme-lavender"></div><span>Lavender</span></div>
+        <div class="template-card" data-template="peach"><div class="template-preview theme-peach"></div><span>Peach</span></div>
+        <div class="template-card" data-template="red"><div class="template-preview theme-red"></div><span>Red</span></div>
+        <div class="template-card" data-template="teal"><div class="template-preview theme-teal"></div><span>Teal</span></div>
+        <div class="template-card" data-template="indigo"><div class="template-preview theme-indigo"></div><span>Indigo</span></div>
+        <div class="template-card" data-template="charcoal"><div class="template-preview theme-charcoal"></div><span>Charcoal</span></div>
+        <div class="template-card" data-template="navy"><div class="template-preview theme-navy"></div><span>Navy</span></div>
+        <div class="template-card" data-template="forest"><div class="template-preview theme-forest"></div><span>Forest</span></div>
+        <div class="template-card" data-template="gold"><div class="template-preview theme-gold"></div><span>Gold</span></div>
+        <div class="template-card" data-template="silver"><div class="template-preview theme-silver"></div><span>Silver</span></div>
+        <div class="template-card" data-template="copper"><div class="template-preview theme-copper"></div><span>Copper</span></div>
+        <div class="template-card" data-template="pearl"><div class="template-preview theme-pearl"></div><span>Pearl</span></div>
+        <div class="template-card" data-template="jade"><div class="template-preview theme-jade"></div><span>Jade</span></div>
+        <div class="template-card" data-template="mint"><div class="template-preview theme-mint"></div><span>Mint</span></div>
+        <div class="template-card" data-template="pink"><div class="template-preview theme-pink"></div><span>Pink</span></div>
+        <div class="template-card" data-template="lav"><div class="template-preview theme-lav"></div><span>Lav</span></div>
+        <div class="template-card" data-template="blush"><div class="template-preview theme-blush"></div><span>Blush</span></div>
+        <div class="template-card" data-template="sky"><div class="template-preview theme-sky"></div><span>Sky</span></div>
+        <div class="template-card" data-template="forest2"><div class="template-preview theme-forest2"></div><span>Forest 2</span></div>
+        <div class="template-card" data-template="sun"><div class="template-preview theme-sun"></div><span>Sun</span></div>
+        <div class="template-card" data-template="twilight"><div class="template-preview theme-twilight"></div><span>Twilight</span></div>
+        <div class="template-card" data-template="steel"><div class="template-preview theme-steel"></div><span>Steel</span></div>
+        <div class="template-card" data-template="ivory"><div class="template-preview theme-ivory"></div><span>Ivory</span></div>
+        <div class="template-card" data-template="cobalt"><div class="template-preview theme-cobalt"></div><span>Cobalt</span></div>
+        <div class="template-card" data-template="burnt"><div class="template-preview theme-burnt"></div><span>Burnt</span></div>
+        <div class="template-card" data-template="olive"><div class="template-preview theme-olive"></div><span>Olive</span></div>
+      </div>
 
+      <div id="template-preview"></div>
+
+      <!-- Action Buttons -->
       <div class="buttons">
         <button type="button" onclick="generateResume()">Generate Resume</button>
         <button type="button" onclick="downloadPDF()">Download PDF</button>
@@ -62,14 +102,13 @@
     </form>
   </div>
 
-  <div id="resumeContainer" class="resume-output"></div>
+  <!-- Resume Output -->
+  <div id="resumePreview" class="resume-output"></div>
+  <div id="resumeContainer" style="display:none; width:800px; background:#fff; padding:20px;"></div>
 
-  <!-- html2pdf.js for PDF export -->
+  <!-- Scripts -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-
-  <!-- JavaScript Files -->
   <script type="module" src="scripts/script.js"></script>
-
   <script src="scripts/export.js"></script>
 </body>
 </html>
