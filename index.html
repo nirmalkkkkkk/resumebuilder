@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dynamic Resume Builder</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="header">
+    <h1>✨ Dynamic Resume Builder</h1>
+  </header>
+
+  <div class="form-wrapper">
+    <form id="resume-form">
+      <input type="text" id="name" placeholder="Full Name" required />
+      <input type="email" id="email" placeholder="Email" required />
+      <input type="tel" id="phone" placeholder="Phone Number" required />
+      <input type="text" id="linkedin" placeholder="LinkedIn Profile" />
+      <input type="text" id="github" placeholder="GitHub Profile" />
+
+      <textarea id="summary" placeholder="Career Objective"></textarea>
+      <textarea id="education" placeholder="Education (Year, Institute, CGPA)"></textarea>
+      <textarea id="projects" placeholder="Projects (Title, Tech Used, Summary)"></textarea>
+      <textarea id="experience" placeholder="Experience (Role, Company, Duration, Summary)"></textarea>
+      <textarea id="skills" placeholder="Skills (comma-separated)"></textarea>
+
+      <label for="photo">Upload Profile Photo:</label>
+      <input type="file" id="photo" accept="image/*" />
+
+      <label for="certificates">Upload Certificates (PDF or Image):</label>
+      <input type="file" id="certificates" multiple accept="image/*,application/pdf" />
+
+      <label for="template">Choose a Template:</label>
+      <select id="template">
+        <option value="sagegreen">Sage Green</option>
+        <option value="lightblue">Light Blue</option>
+        <option value="yellow">Yellow</option>
+        <option value="modern">Modern</option>
+        <option value="dark">Dark</option>
+        <option value="gradient">Gradient</option>
+        <option value="classic">Classic</option>
+        <option value="minimalist">Minimalist</option>
+        <option value="professional">Professional</option>
+        <option value="elegant">Elegant</option>
+        <option value="creative">Creative</option>
+        <option value="corporate">Corporate</option>
+        <option value="vibrant">Vibrant</option>
+        <option value="pastel">Pastel</option>
+        <option value="monochrome">Monochrome</option>
+        <option value="neon">Neon</option>
+        <option value="aqua">Aqua</option>
+        <option value="midnight">Midnight</option>
+        <option value="coolgrey">Cool Grey</option>
+        <option value="warmbeige">Warm Beige</option>
+      </select>
+
+      <div class="buttons">
+        <button type="button" onclick="generateResume()">Generate Resume</button>
+        <button type="button" onclick="downloadPDF()">Download PDF</button>
+      </div>
+    </form>
+  </div>
+
+  <div id="resumeContainer" class="resume-output"></div>
+
+  <!-- html2pdf.js for PDF export -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+  <!-- JavaScript Files -->
+  <script type="module" src="scripts/script.js"></script>
+
+  <script src="scripts/export.js"></script>
+</body>
+</html>
